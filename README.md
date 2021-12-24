@@ -23,7 +23,7 @@ The easiest way to use this image is as a systemd unit.
     ExecStartPre=-/bin/podman kill open-vm-tools
     ExecStartPre=-/bin/podman rm open-vm-tools
     ExecStartPre=/bin/podman pull ghcr.io/nccurry/open-vm-tools:latest
-    ExecStart=/bin/podman run --net=host --privileged --name open-vm-tools ghcr.io/nccurry/open-vm-tools:latest
+    ExecStart=/bin/podman run -v /proc/:/hostproc/ -v /sys/fs/cgroup:/sys/fs/cgroup -v /run/systemd:/run/systemd --pid=host --net=host --ipc=host --uts=host --rm  --privileged --name open-vm-tools ghcr.io/nccurry/open-vm-tools:latest
 
     [Install]
     WantedBy=multi-user.target
