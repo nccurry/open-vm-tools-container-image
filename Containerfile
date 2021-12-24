@@ -14,4 +14,15 @@ ENV SYSTEMD_IGNORE_CHROOT=1
 
 RUN microdnf install -y --nodocs open-vm-tools
 
-CMD ["/usr/bin/vmtoolsd"]
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
+
+# Uncomment to change logging behavior
+# https://kb.vmware.com/s/article/1007873
+# COPY tools.conf /etc/vmware-tools/tools.conf
+
+CMD ["/entrypoint.sh"]
+
+
+
+
