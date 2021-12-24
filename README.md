@@ -22,7 +22,7 @@ The easiest way to use this image is as a systemd unit.
     TimeoutStartSec=0
     ExecStartPre=-/bin/podman kill open-vm-tools
     ExecStartPre=-/bin/podman rm open-vm-tools
-    ExecStartPre=/bin/podman pull registry.access.redhat.com/rhel7/open-vm-tools:latest
+    ExecStartPre=/bin/podman pull ghcr.io/nccurry/open-vm-tools:latest
     ExecStart=/bin/podman run --net=host --privileged --name open-vm-tools ghcr.io/nccurry/open-vm-tools:latest
 
     [Install]
