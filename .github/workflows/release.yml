@@ -1,3 +1,4 @@
+# https://www.redhat.com/en/blog/build-ubi-containers-github-actions-buildah-and-podman
 name: Build container image
 on:
 - push
