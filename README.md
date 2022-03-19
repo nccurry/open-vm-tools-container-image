@@ -6,15 +6,14 @@ This repository hosts the Containerfile needed to build a container image that c
 
 The primary use-case for this image is in situations where installing the open-vm-tools RPM / DEB package is infeasible.
 
-Fedora CoreOS virtual machines, for example, expect workloads to run containerized. A discussion around this use-case [here](https://github.com/coreos/fedora-coreos-tracker/issues/70).
- 
+Fedora CoreOS virtual machines, for example, expect workloads to run containerized. A discussion around this use-case [here](https://github.com/coreos/fedora-coreos-tracker/issues/70) and an official Red Hat image can be found [here]
+(https://catalog.redhat.com/software/containers/rhel7/open-vm-tools/58ee4f6e4b339a32b5fb7bae?container-tabs=dockerfile).
+
 ## How to use this image?
 
 The easiest way to use this image is as a systemd unit.
 
 ```ini
-# https://github.com/coreos/fedora-coreos-tracker/issues/70#issuecomment-584639405
-# https://catalog.redhat.com/software/containers/rhel7/open-vm-tools/58ee4f6e4b339a32b5fb7bae?container-tabs=dockerfile
 [Unit]
 Description=Open VM Tools
 After=network-online.target
